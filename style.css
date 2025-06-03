@@ -1,0 +1,527 @@
+/* Основные переменные */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --success-color: #2e7d32;
+    --error-color: #d32f2f;
+    --warning-color: #ed6c02;
+    --border-color: #dee2e6;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Светлая тема (значения по умолчанию) */
+:root {
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+}
+
+/* Темная тема */
+[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --border-color: #4d4d4d;
+}
+
+/* Базовые стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Компоненты */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+/* Навигация */
+nav {
+    margin: 15px 0;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Формы */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.75rem;
+    font-weight: 500;
+    color: #495057;
+}
+
+input, select, textarea {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #fff;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 330px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: var(--transition);
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(67, 97, 238, 0.25);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    transition: var(--transition);
+    margin-top: 2.35rem;
+    align-self: flex-start;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+.error-message {
+    color: var(--error-color);
+    background-color: #fde8e8;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    display: none;
+    border-left: 4px solid var(--error-color);
+}
+
+/* Results */
+.result-card {
+    margin-top: 2.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: var(--transition);
+    padding: 1.5rem;
+}
+
+/* Стили для блоков с результатами в темной теме */
+[data-theme="dark"] .result-card  {
+    border: 1px solid #4d4d4d;
+}
+
+.result-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.result-card h3 {
+    margin: 0;
+    padding: 1rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-radius: 8px;
+}
+
+/* Стили для видимых заголовков */
+h1, h2, h3 {
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.result-content {
+    padding: 1.5rem;
+}
+
+.result-content > p {
+    color: #6c757d;
+    margin: 0 0 1.5rem 0;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.result-item {
+    background: #f8f9ff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: var(--transition);
+}
+
+/* Стили для темной темы */
+[data-theme="dark"] .card,
+[data-theme="dark"] .result-card {
+    background: #2d2d2d;
+    border: 1px solid #4d4d4d;
+}
+
+[data-theme="dark"] .result-item {
+    background: #333333;
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: var(--transition);
+    border: 1px solid #4d4d4d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+[data-theme="dark"] .result-item .binary-output {
+    background: #333333;
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: var(--transition);
+    border: 1px solid #4d4d4d;
+    border-left: 4px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+[data-theme="dark"] .network-address {
+    border-left-color: #70b270;
+}
+
+[data-theme="dark"] .network-address .value {
+    color: #70b270;
+    font-weight: 700;
+}
+
+[data-theme="dark"] .broadcast-address {
+    border-left-color: #ff6b6b;
+}
+
+[data-theme="dark"] .broadcast-address .value {
+    color: #ff6b6b;
+}
+
+[data-theme="dark"] .host-range {
+    border-left-color: #63b2eb;
+}
+
+[data-theme="dark"] .host-range .value {
+    color: #63b2eb;
+}
+
+[data-theme="dark"] .mask-info {
+    border-left-color: #d190e8;
+}
+
+[data-theme="dark"] .mask-info .value {
+    color: #d190e8;
+}
+
+[data-theme="dark"] .error-message {
+    background-color: #331f1f;
+    border-left: 4px solid var(--error-color);
+}
+
+/* Стили для полей ввода в темной теме */
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #4d4d4d;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(72, 149, 239, 0.25);
+}
+
+/* Стили для переключателя темы */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.result-content {
+    padding: 1.5rem;
+}
+
+.result-content > p {
+    color: #6c757d;
+    margin: 0 0 1.5rem 0;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.result-item {
+    background: #f8f9ff;
+    border-radius: 8px;
+    padding: 1.25rem;
+    border-left: 4px solid var(--accent-color);
+    transition: var(--transition);
+    border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.result-item .label {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+}
+
+.result-item .label i {
+width: 1.25rem;
+text-align: center;
+}
+
+.result-item .value {
+font-size: 1.1rem;
+font-weight: 600;
+color: var(--text-color);
+word-break: break-all;
+line-height: 1.4;
+}
+
+.result-item .binary-output {
+font-family: 'Courier New', monospace;
+font-size: 1.1rem;
+color: var(--primary-color);
+white-space: pre-wrap;
+line-height: 1.8;
+padding: 0.5rem;
+background: #f8f9ff;
+border-radius: 4px;
+border: 1px solid var(--border-color);
+}
+
+/* Specific result item styles */
+.network-address {
+border-left-color: var(--success-color);
+}
+
+.network-address .value {
+color: var(--success-color);
+font-weight: 700;
+}
+
+.broadcast-address {
+    border-left-color: var(--error-color);
+}
+
+.broadcast-address .value {
+    color: var(--error-color);
+    font-weight: 700;
+}
+
+.host-range {
+    border-left-color: #1976d2;
+}
+
+.host-range .value {
+    color: #1976d2;
+}
+
+.mask-info {
+    border-left-color: #7b1fa2;
+}
+
+.mask-info .value {
+    color: #7b1fa2;
+}
+
+/* Оптимизированная анимация загрузки */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.loading i {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary-color);
+    border-radius: 50%;
+    animation: spin 0.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Оптимизация производительности */
+.loading i {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    button {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    
+    .result-card h3 {
+        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+    }
+    
+    .result-content {
+        padding: 1.25rem;
+    }
+}
+
+/* Стили для футера */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    font-size: 0.875rem;
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+footer p {
+    margin: 0;
+}
