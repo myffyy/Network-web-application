@@ -1,4 +1,4 @@
-# Network Web Calculator
+# Network Tools
 
 ## Описание проекта (Project Description)
 
@@ -70,26 +70,24 @@ python app.py
 
 ```
 Networks/
-├── app/               # Flask приложение
-│   ├── __init__.py
-│   └── app.py         # Основное приложение Flask
-│   └── README.md      # Документация приложения
-├── console/           # Консольная версия
-│   ├── __init__.py
-│   └── console.py     # Консольный интерфейс
-│   └── README.md      # Документация консоли
-├── requirements/
-│   └── requirements.txt   # Список зависимостей
-│   └── README.md      # Документация зависимостей
-├── static/           # Статические файлы
-│   ├── style.css     # Стили приложения
-│   └── README.md     # Документация стилей
-├── templates/        # HTML шаблоны
-│   ├── index.html    # Главная страница
-│   ├── ip_converter.html  # Конвертер IP
+├── app (docs)/                   # Документация приложения
+│   └── README.md               # Документация приложения
+├── console/                      # Консольная версия
+│   ├── console.py              # Консольный интерфейс
+│   └── README.md               # Документация консоли
+├── requirements/                 # Список зависимостей
+│   ├── requirements.txt        # Список зависимостей
+│   └── README.md               # Документация зависимостей
+├── static/                       # Статические файлы
+│   ├── style.css               # Стили приложения
+│   └── README.md               # Документация стилей
+├── templates/                    # HTML шаблоны
+│   ├── index.html              # Главная страница
+│   ├── ip_converter.html       # Конвертер IP
 │   ├── subnet_calculator.html  # Калькулятор подсетей
-│   └── README.md     # Документация шаблонов
-└── README.md         # Основная документация проекта
+│   └── README.md               # Документация шаблонов
+├── README.md                     # Основная документация проекта
+├── app.py                        # Основное приложение Flask
 ```
 
 ## Автор (Author)
