@@ -52,7 +52,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-После запуска приложение будет доступно по адресу: http://localhost:5000
+После запуска приложение будет доступно по адресу: http://localhost:5001
 
 ## Использование (Usage)
 
