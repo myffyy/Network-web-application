@@ -1,4 +1,4 @@
-# Network Web Application
+# Network Tools
 
 ## Описание проекта (Project Description)
 
@@ -93,3 +93,20 @@ myffyy
 - Поддерживается темная тема по умолчанию
 - Интерфейс адаптирован под разные размеры экранов
 - Все вычисления выполняются на клиентской стороне для лучшей производительности
+
+## Скриншоты (Screenshots)
+
+### Главная страница (Home Page)
+![Главная страница](screenshots/homepage.png)
+
+### Конвертер IP (IP Converter)
+![Конвертер IP](screenshots/ipconverter.png)
+
+### Пример конвертации IP (IP Conversion Example)
+![Пример конвертации IP](screenshots/converterexample.png)
+
+### Калькулятор подсетей (Subnet Calculator)
+![Калькулятор подсетей](screenshots/subnetcalculator.png)
+
+### Пример расчета подсети (Subnet Calculation Example)
+![Пример расчета подсети](screenshots/subnetexample.png)
