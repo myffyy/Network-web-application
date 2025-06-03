@@ -81,13 +81,9 @@ Networks/
     └── subnet_calculator.html  # Калькулятор подсетей
 ```
 
-## Лицензия (License)
-
-MIT License
-
 ## Автор (Author)
 
-[Ваше имя]
+myffyy
 
 ---
 
