@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Converter</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script>
+        // Функция для переключения темы
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            // Обновляем тему
+            body.setAttribute('data-theme', newTheme);
+            
+            // Сохраняем тему в localStorage
+            localStorage.setItem('theme', newTheme);
+            
+            // Обновляем иконку
+            const icon = document.querySelector('.theme-toggle i');
+            icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        }
+
+        // Инициализация темы при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'dark';
+            document.body.setAttribute('data-theme', savedTheme);
+            
+            // Устанавливаем правильную иконку
+            const icon = document.createElement('i');
+            icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            document.querySelector('.theme-toggle').appendChild(icon);
+        });
+    </script>
+</head>
+<body data-theme="dark">
+    <div class="container">
+        <div class="theme-toggle" onclick="toggleTheme()"></div>
+<header>
+            <h1>IP Address Converter</h1>
+            <nav>
+                <a href="/" class="active"><i class="fas fa-home"></i> Home</a> | 
+                <a href="/ip-converter"><i class="fas fa-exchange-alt"></i> IP Converter</a> | 
+                <a href="/subnet-calculator"><i class="fas fa-calculator"></i> Subnet Calculator</a>
+            </nav>
+        </header>
+        <main>
+            <section class="card">
+                <h2>IP to Binary</h2>
+                <form hx-post="/api/ip-to-binary" hx-swap="innerHTML" hx-target="#binary-result">
+                    <input type="text" name="ip" placeholder="Enter IP (e.g. 192.168.1.1)" required>
+                    <button type="submit">Convert</button>
+                </form>
+                <div id="binary-result"></div>
+            </section>
+            <section class="card">
+                <h2>Binary to IP</h2>
+                <form hx-post="/api/binary-to-ip" hx-swap="innerHTML" hx-target="#ip-result">
+                    <input type="text" name="binary" placeholder="Enter binary (e.g. 11000000101010000000000100000001)" required>
+                    <button type="submit">Convert</button>
+                </form>
+                <div id="ip-result"></div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2025 Network App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
