@@ -62,9 +62,9 @@ python app.py
 - Выбор темы сохраняется между сессиями
 
 ### Навигация (Navigation)
-- Главная страница: http://localhost:5000
-- Конвертер IP: http://localhost:5000/ip-converter
-- Калькулятор подсетей: http://localhost:5000/subnet-calculator
+- Главная страница: http://localhost:5001
+- Конвертер IP: http://localhost:5001/ip-converter
+- Калькулятор подсетей: http://localhost:5001/subnet-calculator
 
 ## Структура проекта (Project Structure)
 
