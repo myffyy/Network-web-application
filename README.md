@@ -70,13 +70,17 @@ python app.py
 
 ```
 Networks/
-├── app.py              # Основное приложение Flask
-├── console.py          # Консольный интерфейс
-├── requirements.txt    # Список зависимостей
-├── static/            # Статические файлы
-│   └── style.css      # Стили приложения
-└── templates/         # HTML шаблоны
-    ├── index.html     # Главная страница
+├── app/               # Flask приложение
+│   ├── __init__.py
+│   └── app.py         # Основное приложение Flask
+├── console/           # Консольная версия
+│   ├── __init__.py
+│   └── console.py     # Консольный интерфейс
+├── requirements.txt   # Список зависимостей
+├── static/           # Статические файлы
+│   └── style.css     # Стили приложения
+└── templates/        # HTML шаблоны
+    ├── index.html    # Главная страница
     ├── ip_converter.html  # Конвертер IP
     └── subnet_calculator.html  # Калькулятор подсетей
 ```
